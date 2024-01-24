@@ -1,0 +1,19 @@
+from forex_python.converter import CurrencyRates
+
+def convert_currency(amount, from_currency, to_currency):
+    # Create an instance of CurrencyRates
+    c = CurrencyRates()
+
+    # Convert the amount from one currency to another
+    converted_amount = c.convert(from_currency, to_currency, amount)
+    return converted_amount
+
+if __name__ == "__main__":
+    # Input values
+    amount_to_convert = float(input("Enter amount to convert: "))
+    from_currency = input("Enter currency to convert from (e.g., USD, EUR): ").upper()
+    to_currency = input("Enter currency to convert to (e.g., USD, EUR): ").upper()
+
+    # Perform currency conversion
+    converted_value = convert_currency(amount_to_convert, from_currency, to_currency)
+    print(f"{amount_to_convert} {from_currency} equals {converted_value} {to_currency}")
